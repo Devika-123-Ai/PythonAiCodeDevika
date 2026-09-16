@@ -1,6 +1,0 @@
-LOGIN AUTOMATION REPORT
------------------------
-admin : PASS
-aitesting : PASS
-aisecurity : PASS
-admin : FAIL
