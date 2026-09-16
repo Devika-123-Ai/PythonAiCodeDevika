@@ -1,5 +1,5 @@
 #creates folders using pathlib
-#reads usernames/passwords from data/users.txt
+#reads usernames/passwords from advancecoding/data/users.txt
 #uses a reusable login() function
 #checks PASS/FAIL
 #creates a report
@@ -38,7 +38,7 @@ with open("reports/test_report.txt", "w") as report:
 
 
 # Read test data and execute test
-with open("data/users.txt", "r") as file:
+with open("advancecoding/data/users.txt", "r") as file:
 
     for line in file:
 
