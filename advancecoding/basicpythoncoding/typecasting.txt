@@ -1,0 +1,211 @@
+1. int() — Convert to Integer
+
+Converts a number or numeric string to an integer.
+
+x = "100"
+y = int(x)
+
+print(y)
+print(type(y))
+
+Output:
+
+100
+<class 'int'>
+
+Another example:
+
+x = 10.8
+print(int(x))
+
+Output:
+
+10
+
+⚠️ int() removes the decimal part; it does not round.
+
+2. float() — Convert to Float
+x = "10.5"
+y = float(x)
+
+print(y)
+print(type(y))
+
+Output:
+
+10.5
+<class 'float'>
+
+You can also convert an integer:
+
+x = 10
+print(float(x))
+
+Output:
+
+10.0
+
+3. str() — Convert to String
+x = 100
+y = str(x)
+
+print(y)
+print(type(y))
+
+Output:
+
+100
+<class 'str'>
+
+Useful when combining numbers with text:
+
+age = 25
+print("My age is " + str(age))
+
+4. bool() — Convert to Boolean
+
+Converts a value to True or False.
+
+print(bool(1))
+print(bool(0))
+
+Output:
+
+True
+False
+
+For strings:
+
+print(bool("Hello"))
+print(bool(""))
+
+Output:
+
+True
+False
+
+🧠 Important: Empty values are generally False; non-empty values are generally True.
+
+5. list() — Convert to List
+
+x = "Python"
+y = list(x)
+
+print(y)
+
+Output:
+
+['P', 'y', 't', 'h', 'o', 'n']
+
+From a tuple:
+
+x = (1, 2, 3)
+print(list(x))
+
+Output:
+
+[1, 2, 3]
+6. tuple() — Convert to Tuple
+
+x = [1, 2, 3]
+y = tuple(x)
+
+print(y)
+
+Output:
+
+(1, 2, 3)
+
+From a string:
+
+print(tuple("ABC"))
+
+Output:
+
+('A', 'B', 'C')
+
+7. set() — Convert to Set
+
+A set keeps unique values.
+
+x = [1, 2, 2, 3, 3]
+y = set(x)
+
+print(y)
+
+Output:
+
+{1, 2, 3}
+
+Duplicates are removed.
+
+8. dict() — Convert to Dictionary
+
+You can create a dictionary from key-value pairs.
+
+x = [("name", "John"), ("age", 25)]
+
+y = dict(x)
+
+print(y)
+
+Output:
+
+{'name': 'John', 'age': 25}
+9. complex() — Convert to Complex Number
+x = 5
+y = complex(x)
+
+print(y)
+
+Output:
+
+(5+0j)
+
+You can also provide real and imaginary parts:
+
+x = complex(2, 3)
+
+print(x)
+
+Output:
+
+(2+3j)
+⭐ Quick Cheat Sheet
+Function	Converts to	Example	Result
+int()	Integer	int("10")	10
+float()	Float	float("10.5")	10.5
+str()	String	str(100)	"100"
+bool()	Boolean	bool(1)	True
+list()	List	list("ABC")	['A','B','C']
+tuple()	Tuple	tuple([1,2])	(1,2)
+set()	Set	set([1,1,2])	{1,2}
+dict()	Dictionary	dict([("a",1)])	{'a':1}
+complex()	Complex	complex(2,3)	(2+3j)
+🧠 The most important ones for beginners
+
+Remember these first:
+
+int()      # → integer
+float()    # → decimal number
+str()      # → string
+bool()     # → True / False
+list()     # → list
+tuple()    # → tuple
+set()      # → set
+dict()     # → dictionary
+
+Example combining typecasting:
+
+age = "25"
+
+age = int(age)
+age = age + 5
+
+print(age)
+
+Output:
+
+30
+
+Here, "25" → 25 using typecasting.
