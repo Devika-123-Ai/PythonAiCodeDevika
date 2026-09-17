@@ -2,7 +2,7 @@
 # login automation test framework
 # write a python code for login testing framework
 #creates folders using pathlib
-#1)read credentials from the external file,
+#1)read credentials from the external file-users.txt, and
 #2)create a reusable login function,
 #3)executes login test.
 #4) determine pass or fail, and 
@@ -19,16 +19,10 @@ Path("logs").mkdir(exist_ok=True)
 Path("reports").mkdir(exist_ok=True)
 
 
-# Login function
-def login(username, password):
-    valid_users = {
-        "admin": "password123",
-        "aitesting": "python123",
-        "aisecurity": "durgasoft"
-    }
-
-    return valid_users.get(username) == password
-
+# reusingLogin function
+from loginfunc import login
+result = login("admin", "password123")
+print(result)
 
 # Start execution log
 with open("advancecoding/logs/execution.log", "a") as log:
