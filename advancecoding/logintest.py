@@ -27,7 +27,7 @@ def login(username, password):
 
 
 # Start execution log
-with open("logs/execution.log", "a") as log:
+with open("advancecoding/logs/execution.log", "a") as log:
     log.write(f"{datetime.now()} - Test execution started\n")
 
 
