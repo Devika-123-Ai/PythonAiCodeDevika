@@ -1,6 +1,6 @@
 def add(a, b):
     return a + b
-addition=add
+addition=add                #a higher order function is a function that takes another function as an argument or returns a function as a result
 print(addition(10,20))
 
 def loud(name):
