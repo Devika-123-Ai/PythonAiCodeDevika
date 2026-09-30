@@ -13,7 +13,7 @@ class BankAccount():
         
         # print("inital deposit",self.__balance)
 
-        BankAccount.total_accounts += 1
+        BankAccount.total_accounts = BankAccount.total_accounts + 1
         
     def deposit(self,amount):
         self.__balance = self.__balance + amount
@@ -26,7 +26,7 @@ class BankAccount():
     
     def withdraw(self, amount):
 
-       if amount > transaction_limit:
+       if amount > transaction_limit:       #using global var
         print("Transaction limit over")
 
        elif amount > self.__balance:
@@ -55,7 +55,8 @@ class Test():
 
     print(myaccout.display())
 
-    totalaccounts = BankAccount.total_accounts
+    #print(BankAccount.total_accounts()) #calling class method
+    totalaccounts = BankAccount.total_accounts #calling clss var
     print(totalaccounts)
 
     
