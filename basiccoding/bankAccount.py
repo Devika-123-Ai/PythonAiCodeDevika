@@ -1,27 +1,63 @@
 #Create a BankAccount with private balance and deposit() / withdraw() methods.
-ifsccode=12345678
+transaction_limit = 10000    # Global variable 
 class BankAccount():
-    def __init__(self,initialdeposit,pinno):
+    bankname = 'citybank'
+    total_accounts =0 
+    # ifsccode=686878   # class variables
+    
+    def __init__(self,accountno,customername,initialdeposit,pin):
+        self.__accountno = accountno
+        self.__customername = customername
         self.__balance = initialdeposit
-        self.__pinno = pinno
-        print("inital deposit",self.__balance )
-        print("pin no" , self.__pinno)
-    def deposit(self,money):
-        self.__balance = self.__balance + money 
-        return self.__balance
-    
-    def withdraw(self,money):
-        self.__balance = self.__balance - money 
-        return self.__balance
+        self.__pin = pin                  #instance variables 
+        
+        # print("inital deposit",self.__balance)
 
-class Test():
-    myaccout = BankAccount(2000,1234)# we are not using self._balance directly because its private so we just initializing though constructor
+        BankAccount.total_accounts += 1
+        
+    def deposit(self,amount):
+        self.__balance = self.__balance + amount
+        return self.__balance
     
-    deposit= myaccout.deposit(1000)
+    def display(self):
+        return {
+            "accountno":self.__accountno,
+            "customername":self.__customername,"initialbalance": self.__balance,"pin":self.__pin}
+    
+    def withdraw(self, amount):
+
+       if amount > transaction_limit:
+        print("Transaction limit over")
+
+       elif amount > self.__balance:
+        print("Insufficient balance")
+
+       else:
+        print("Sufficient balance")
+        self.__balance = self.__balance - amount
+        return self.__balance
+    
+    # @classmethod
+    # def total_accounts(cls):
+    #     return cls.total_accounts
+
+    
+class Test():
+
+    myaccout = BankAccount(987654321,"devika",1000,1234)
+    myaccout = BankAccount(123445667,"pandu",1000,4321)# we are not using self._balance directly because its private so we just initializing though constructor
+    
+    deposit= myaccout.deposit(2000)
     print("after deposit current bal",deposit)
-    withdrawl= myaccout.withdraw(500)
+
+    withdrawl= myaccout.withdraw(11000)
     print("after withdrawls current bal" ,withdrawl)
 
-    print(ifsccode)
+    print(myaccout.display())
+
+    totalaccounts = BankAccount.total_accounts
+    print(totalaccounts)
+
+    
 
     
